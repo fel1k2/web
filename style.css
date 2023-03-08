@@ -1,0 +1,32 @@
+.form-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#user-name-input, #user-type-input, #password-input, #submit-input, #verification-input {
+    width: 350px;
+    height: 25px;
+}
+input[type=submit] {
+    background-color: cyan;
+}
+input[type=submit]:hover {
+    background-color: darkcyan;
+    cursor: pointer;
+}
