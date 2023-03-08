@@ -3,8 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <title>$Title$</title>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-$END$
+<div class="form-container">
+
+
+<h1>Registration form</h1>
+<form>
+  <div class="form-input">
+    <label for="user-name-input">Enter your name</label>
+    <input id="user-name-input" type="text" placeholder="Name">
+  </div>
+  <div class="form-input">
+    <label for="password-input">Enter your password</label>
+    <input id="password-input" type="password" placeholder="Password">
+  </div>
+  <div class="form-input">
+    <label for="verification-input">Enter your verification code</label>
+    <input id="verification-input" type="text" placeholder="Verification code">
+  </div>
+    <div class="form-input">
+    <label for="user-type-input">Select your role</label>
+  <select id="user-type-input">
+    <option value="0">Admin</option>
+    <option value="1">Moderator</option>
+    <option value="2">User</option>
+  </select>
+  </div>
+  <input id="submit-input" type="submit" value="Submit">
+</form>
+</div>
 </body>
 </html>
