@@ -4,25 +4,27 @@
   <meta charset="UTF-8">
   <title>$Title$</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="light-theme.css" id="theme-link">
 
 </head>
 <body>
+
+<input id="theme" type="button" value="Change theme">
+
 <div class="form-container">
-
-
 <h1>Registration form</h1>
-<form>
+<form class="formWithValidation">
   <div class="form-input">
     <label for="user-name-input">Enter your name</label>
-    <input id="user-name-input" type="text" placeholder="Name">
+    <input id="user-name-input" type="text" placeholder="Name" class="name field">
   </div>
   <div class="form-input">
     <label for="password-input">Enter your password</label>
-    <input id="password-input" type="password" placeholder="Password">
+    <input id="password-input" type="password" placeholder="Password" class="password field">
   </div>
   <div class="form-input">
     <label for="verification-input">Enter your verification code</label>
-    <input id="verification-input" type="text" placeholder="Verification code">
+    <input id="verification-input" type="text" placeholder="Verification code" class="verification field">
   </div>
     <div class="form-input">
     <label for="user-type-input">Select your role</label>
@@ -32,8 +34,10 @@
     <option value="2">User</option>
   </select>
   </div>
-  <input id="submit-input" type="submit" value="Submit">
+  <input id="submit-input" type="submit" value="Submit" class="validateBtn">
 </form>
 </div>
+<script src="change_theme.js"></script>
+<script src="validity.js"></script>
 </body>
 </html>

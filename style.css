@@ -30,3 +30,17 @@ input[type=submit]:hover {
     background-color: darkcyan;
     cursor: pointer;
 }
+
+
+#theme {
+    width: 105px;
+    height: 25px;
+    cursor: pointer;
+}
+input[type=button] {
+    background-color: white;
+}
+input[type=button]:hover {
+    background-color: gray;
+    cursor: pointer;
+}
