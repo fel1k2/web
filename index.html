@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>$Title$</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="static/style.css">
   <link rel="stylesheet" href="light-theme.css" id="theme-link">
 
 </head>
@@ -13,18 +13,19 @@
 
 <div class="form-container">
 <h1>Registration form</h1>
+  <form action = "/reg-data" method = "post">
 <form class="formWithValidation">
   <div class="form-input">
     <label for="user-name-input">Enter your name</label>
-    <input id="user-name-input" type="text" placeholder="Name" class="name field">
+    <input id="user-name-input" type="text" placeholder="Name" class="name field" name = "username">
   </div>
   <div class="form-input">
     <label for="password-input">Enter your password</label>
-    <input id="password-input" type="password" placeholder="Password" class="password field">
+    <input id="password-input" type="password" placeholder="Password" class="password field" name = "password">
   </div>
   <div class="form-input">
     <label for="verification-input">Enter your verification code</label>
-    <input id="verification-input" type="text" placeholder="Verification code" class="verification field">
+    <input id="verification-input" type="text" placeholder="Verification code" class="verification field" name = "verification">
   </div>
     <div class="form-input">
     <label for="user-type-input">Select your role</label>
@@ -36,6 +37,7 @@
   </div>
   <input id="submit-input" type="submit" value="Submit" class="validateBtn">
 </form>
+  </form>
 </div>
 <script src="change_theme.js"></script>
 <script src="validity.js"></script>
