@@ -11,7 +11,7 @@ export const AsteroidContent = (props) =>{
                     {`Дата: ${date}`}
                 </div>
                 <div className={styles.contentDistance}>
-                    {`Расстояние: ${distanceModes(distanceMode, distance)}`}
+                    {distanceMode ? `Расстояние: ${distance.kilometers} км` : `Расстояние: ${distance.lunar} Лун`}
                 </div>
                 <div className={styles.contentSize}>
                     {`Размер: ${size} м`}
