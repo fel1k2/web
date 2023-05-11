@@ -4,7 +4,17 @@ import styles from "./Asteroids.module.css"
 import {Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 export const Asteroids = () => {
-    const [asteroids, setAsteroids] = useState([])
+    const [asteroids,setAsteroids] = useState<{
+        name:string;
+        date:string;
+        distance:{
+            kilometers: number;
+            lunar: number;
+        };
+        size:number;
+        id:string;
+        isDangerous:boolean;
+    }[]>([])
 
     const [onlyDangerous,setonlyDangerous] = useState(false)
     const [onlyhdistanceMode, setonlyhdistanceMode] = useState(true)
@@ -39,6 +49,7 @@ export const Asteroids = () => {
             setAsteroids(generateAsteroids())
         }
     }, [])
+    // @ts-ignore
     return (<div>
         <div>
             <Header/>
@@ -46,15 +57,13 @@ export const Asteroids = () => {
         <div>
             <div>
                 <div>
-                    <input type="checkbox" value={onlyDangerous} onChange={()=>setonlyDangerous(!onlyDangerous)}>
-                    </input>
-                    <label>Показать только опасные</label>
+                    <input type={"checkbox"} value={onlyDangerous as unknown as string} name={"onlyDanger"} onChange={()=> setonlyDangerous(!onlyDangerous)}/><label htmlFor={"onlyDanger"}>Показывать только опасные</label>
                 </div>
 
                 <div className={styles.distances}>
                     <label >Расстояние</label>
-                    <Link onClick={()=>setonlyhdistanceMode(true)}>в километрах</Link>
-                    <Link onClick={()=>setonlyhdistanceMode(false)}>в дистанциях до луны</Link>
+                    <Link onClick={()=>setonlyhdistanceMode(true)} to="">в километрах</Link>
+                    <Link onClick={()=>setonlyhdistanceMode(false)} to="">в дистанциях до луны</Link>
                 </div>
             </div>
             {
@@ -82,9 +91,9 @@ const generateAsteroids = ()=> {
         `декабря`,];
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const result = [];
-    for (let i = 0; i < (Math.random() * 20 + 2).toFixed(0); i++) {
+    for (let i = 0; i < 25; i++) {
         let namee = "";
-        for (let j = 0; j < (Math.random() * 10 + 2).toFixed(0); j++) {
+        for (let j = 0; j < 20; j++) {
             namee += characters[(Math.random() * 25).toFixed(0)];
         }
         const name = namee;
