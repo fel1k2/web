@@ -3,6 +3,7 @@ import { AsteroidContent } from './AsteroidContent/AsteroidContent'
 import { AsteroidAction } from './AsteroidAction/AsteroidAction'
 import { AsteroidImage } from './AsteroidImage/AsteroidImage'
 
+
 type AsteroidCardProps = {
     name: string
     date: string
@@ -12,10 +13,10 @@ type AsteroidCardProps = {
     }
     size: number
     isDangerous: boolean
-    distanceMode: boolean
+
 }
 export const AsteroidCard = (props: AsteroidCardProps) => {
-    const { name, date, distance, size, isDangerous, distanceMode } = props
+    const { name, date, distance, size, isDangerous } = props
 
     return (
         <div className={styles.card}>
@@ -26,7 +27,6 @@ export const AsteroidCard = (props: AsteroidCardProps) => {
                     date={date}
                     distance={distance}
                     size={size}
-                    distanceMode={distanceMode}
                 />
                 <AsteroidAction isDangerous={isDangerous} />
             </div>

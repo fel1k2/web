@@ -2,7 +2,8 @@ import { Header } from '../components/header/header'
 import { AsteroidCard } from '../components/card/Card'
 import styles from './Asteroids.module.css'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import {useContext, useEffect, useState} from 'react'
+import {AsteroidsContext} from "../components/asteroids-context/AsteroidsContext";
 
 export const Asteroids = () => {
     const [asteroids, setAsteroids] = useState<
@@ -19,8 +20,6 @@ export const Asteroids = () => {
         }[]
     >([])
 
-    const [onlyDangerous, setonlyDangerous] = useState(false)
-    const [onlyhdistanceMode, setonlyhdistanceMode] = useState(true)
     useEffect(() => {
         try {
             const result = fetch(
@@ -65,6 +64,9 @@ export const Asteroids = () => {
         }
     }, [])
     // @ts-ignore
+
+    const {onlyDangerous, setonlyDangerous, setonlyhdistanceMode} = useContext(AsteroidsContext)
+
     return (
         <div>
             <div>
@@ -101,14 +103,14 @@ export const Asteroids = () => {
                               <AsteroidCard
                                   key={item.id}
                                   {...item}
-                                  distanceMode={onlyhdistanceMode}
+
                               />
                           ))
                     : asteroids.map((item) => (
                           <AsteroidCard
                               key={item.id}
                               {...item}
-                              distanceMode={onlyhdistanceMode}
+
                           />
                       ))}
             </div>
