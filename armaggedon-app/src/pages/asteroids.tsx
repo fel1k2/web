@@ -1,3 +1,4 @@
+
 import {AsteroidCard} from "../components/card/Card";
 import styles from "./Asteroids.module.css"
 import {Header} from "../components/header/header";
