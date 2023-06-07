@@ -1,10 +1,11 @@
+import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {Asteroids} from "./pages/asteroids";
-import {Destroyment} from "./pages/destroyment";
-import {Asteroid} from "./pages/asteroid";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Asteroids } from './pages/asteroids';
+import { Destroyment } from './pages/destroyment';
+import { Asteroid } from './pages/asteroid';
+import { AsteroidsContextProvider } from './components/asteroids-context/AsteroidsContext';
 
 const router =  createBrowserRouter([
     {
@@ -24,7 +25,9 @@ const router =  createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+      <AsteroidsContextProvider>
+          <RouterProvider router={router} />
+      </AsteroidsContextProvider>
   </React.StrictMode>
 );
 
