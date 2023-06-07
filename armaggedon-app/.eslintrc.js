@@ -1,8 +1,7 @@
 module.exports = {
     "env": {
         "browser": true,
-        "es2021": true,
-        "node": true
+        "es2021": true
     },
     "extends": [
         "eslint:recommended",
@@ -23,8 +22,7 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "@typescript-eslint",
-        "node"
+        "@typescript-eslint"
     ],
     "rules": {
         "import/no-unresolved": "off"

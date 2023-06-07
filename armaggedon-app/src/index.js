@@ -1,10 +1,11 @@
-import React, {createContext} from 'react';
-import ReactDOM from 'react-dom/client';
 import './index.css';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import {Asteroids} from "./pages/asteroids";
-import {Destroyment} from "./pages/destroyment";
-import {Asteroid} from "./pages/asteroid";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Asteroids } from './pages/asteroids';
+import { Destroyment } from './pages/destroyment';
+import { Asteroid } from './pages/asteroid';
+import { AsteroidsContextProvider } from './components/asteroids-context/AsteroidsContext';
 
 const router =  createBrowserRouter([
     {
