@@ -2,10 +2,21 @@
 import { Link } from 'react-router-dom';
 import styles from './header.module.css';
 import { getUserKey } from '../../utils/getUserKey';
-import { useState } from 'react';
+import {memo, useEffect, useMemo, useState} from "react";
+export const Header = memo(() => {
+  const [inputOpened, setInputOpened] = useState(false)
 
-export const Header = () => {
-    const [inputOpened, setInputOpened] = useState(false);
+  const [savedValue, setSavedValue] = useState(null);
+
+  const someExpensiveFunction = useMemo(()=> {
+    const value = Math.random();
+    return value;
+  }, [inputOpened])
+
+  useEffect(()=>{
+    console.log("»»»»", savedValue);
+  }, [savedValue])
+
     return (
       <div className={styles.container}>
           <div>
@@ -19,6 +30,7 @@ export const Header = () => {
               <Link to={'/asteroids'}>Астероиды</Link>
               <Link to={'/destroyment'}>Уничтожение</Link>
           </div>
+        <button onClick={()=>setSavedValue(someExpensiveFunction)}>Click me</button>
           <div>
               {getUserKey() === 'DEMO_KEY' ? (
                 <button onClick={() => setInputOpened(!inputOpened)}>
@@ -40,4 +52,5 @@ export const Header = () => {
           ) : null}
       </div>
     );
-};
+})
+Header.displayName = "Header"
